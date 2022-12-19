@@ -23,6 +23,7 @@ return new class extends Migration
             // $table->timestamp('departure_time', $precision = 0);
             // $table->timestamp('arrival_time', $precision = 0);
 
+            //DOVEVA ESSERE SMALL INT
             $table->tinyInteger('code_train')->unsigned();
             $table->tinyInteger('carriage')->unsigned()->nullable();
             $table->tinyInteger('is_on_time')->default(1);
