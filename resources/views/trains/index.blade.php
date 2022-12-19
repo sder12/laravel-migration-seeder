@@ -20,8 +20,22 @@
                     <h6>from {{$train->departure_station}} </h6>
                     <h6>  to {{$train->arrival_station}}</h6>
                 <hr>
-              
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-6">
+                            <span>  departure at   </span>
+                            <h6>{{$train->departure_time}} </h6>
+                        </div>
+                        <div class="col col-6">                                 
+                            <span> arrive at </span>
+                            <h6> {{$train->arrival_time}}</h6>
+                        </div>
+                    </div> 
+                </div>
+
+                <hr>
+                {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
                 {{-- <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a> --}}
             </div>
