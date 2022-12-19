@@ -15,4 +15,11 @@ class PageController extends Controller
         // dd($trains);
         return view('trains.index', compact('trains'));
     }
+
+    public function showFew()
+    {
+        $trains = Train::where('departure_day', '2022-12-19')->get();
+        // dd($trains);
+        return view('home', compact('trains'));
+    }
 }

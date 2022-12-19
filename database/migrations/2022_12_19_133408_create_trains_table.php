@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('departure_station', 80);
             $table->string('arrival_station', 80);
 
-            $table->dateTime('departure_time');
-            $table->dateTime('arrival_time');
+            $table->date('departure_day');
+            $table->time('departure_time');
+
+            $table->date('arrival_day');
+            $table->time('arrival_time');
             // $table->timestamp("departure_time");
             // $table->timestamp("arrival_time");
 

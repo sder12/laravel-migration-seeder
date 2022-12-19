@@ -4,5 +4,10 @@
 
 @section('content')
     <h1> Home </h1>
-    <a href="{{ route('train')}}">Show all the trains</a>
+    <a href="{{ route('train')}}">See all the trains departing in the nearly future</a>
+    <hr>
+    <h3>Trains departing today: </h3>
+    
+    @include('partials.card-train')
+
 @endsection
