@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('departure_station', 100);
             $table->string('arrival_station', 100);
 
-            $table->timestamp('departure_time');
-            $table->timestamp('arrival_time');
+            // $table->timestamp('departure_time', $precision = 0);
+            // $table->timestamp('arrival_time', $precision = 0);
 
             $table->tinyInteger('code_train')->unsigned();
             $table->tinyInteger('carriage')->unsigned()->nullable();
@@ -31,6 +31,20 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+
+
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('trains');
+    }
+};
+
 
     //ID
 
@@ -47,17 +61,3 @@ return new class extends Migration
     // Cancellato -> boolean -> tinyint unsigned -> defauly (0)
 
     //TIMESTAMPS
-
-
-
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('trains');
-    }
-};
