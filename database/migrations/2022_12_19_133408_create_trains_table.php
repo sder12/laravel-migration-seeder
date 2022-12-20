@@ -20,18 +20,24 @@ return new class extends Migration
             $table->string('departure_station', 80);
             $table->string('arrival_station', 80);
 
-            $table->date('departure_day');
-            $table->time('departure_time');
 
-            $table->date('arrival_day');
-            $table->time('arrival_time');
-            // $table->timestamp("departure_time");
-            // $table->timestamp("arrival_time");
+            // 1. uniti------> dateTime
+            $table->dateTime('departure_day');
+            $table->dateTime('arrival_day');
 
-            $table->smallInteger('code_train')->unsigned();
-            $table->tinyInteger('carriage')->unsigned()->nullable();
-            $table->tinyInteger('is_on_time')->default(1);
-            $table->tinyInteger('got_canceled')->default(0);
+            //2. divisi -----> date + time || hour
+            // $table->date('departure_day');
+            // $table->hour('departure_time');
+            // $table->date('arrival_day');
+            // $table->hour('arrival_time');
+
+            $table->string('code_train', 7); //not smallInteger perchè occupa + memoria e non devo fare operazioni matematiche
+            $table->tinyInteger('wagon_number')->unsigned()->nullable();
+
+            // $table->tinyInteger('is_on_time')->default(1);
+            // $table->tinyInteger('got_canceled')->default(0);
+            $table->boolean('is_on_time')->default(true);
+            $table->boolean('got_canceled')->default(false);
 
             $table->timestamps();
         });
