@@ -22,14 +22,14 @@ return new class extends Migration
 
 
             // 1. uniti------> dateTime
-            // $table->dateTime('departure_day');
-            // $table->dateTime('arrival_day');
+            $table->dateTime('departure_day');
+            $table->dateTime('arrival_day');
 
             //2. divisi -----> date + time || hour
-            $table->date('departure_day');
-            $table->time('departure_time');
-            $table->date('arrival_day');
-            $table->time('arrival_time');
+            // $table->date('departure_day');
+            // $table->time('departure_time');
+            // $table->date('arrival_day');
+            // $table->time('arrival_time');
 
             $table->string('code_train', 7); //not smallInteger perchè occupa + memoria e non devo fare operazioni matematiche
             $table->tinyInteger('wagon_number')->unsigned()->nullable();
